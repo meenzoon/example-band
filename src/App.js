@@ -1,13 +1,10 @@
-import React from 'react';
-
-import { fire } from '../shared/firebase'
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   constructor() {
     super();
-    fire();
   }
 
   render(){
