@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from 'redux'
-import reducers from './reducers'
+import reducers from './modules'
 
-let console = widnow.console;
+let console = window.console;
 
 let initialState = {}
 
