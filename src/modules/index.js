@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux'
-import auth from './auth/auth'
+import authReducer from './auth/auth'
+import contentsReducer from './contents/contents'
 
-const reducers = combineReducers(auth);
+const reducers = combineReducers({
+    authReducer,
+    contentsReducer
+});
 
 export default reducers;
