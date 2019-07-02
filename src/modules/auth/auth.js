@@ -1,5 +1,4 @@
-import { createActions, handleActions, combineActions } from 'redux-actions'
-
+// 액션 타입 정의
 const SIGN_IN_EMAIL_REQUEST = 'auth/SIGN_IN_EMAIL_REQUEST';
 const SIGN_IN_EMAIL_SUCCESS = 'auth/SIGN_IN_EMAIL_SUCCESS';
 const SIGN_IN_EMAIL_FAILED = 'auth/SIGN_IN_EMAIL_FAILED';
@@ -16,11 +15,13 @@ const SIGN_OUT_REQUEST = 'auth/SIGN_OUT_REQUEST';
 const SIGN_OUT_SUCCESS = 'auth/SIGN_OUT_REQUEST';
 const SIGN_OUT_FAILED = 'auth/SIGN_OUT_FAILED';
 
+//초기 상태
 const initialState = {
     color: 'red',
     number: 0
 };
 
+// auth 리듀서
 export default function authReducer(state = initialState, action) {
     switch(action.type) {
         case SIGN_IN_EMAIL_REQUEST:

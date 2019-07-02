@@ -12,6 +12,10 @@ const logger = store => next => action => {
     return result;
 }
 
-const storeFactory = createStore(reducers, initialState, applyMiddleware(logger));
+const storeFactory = createStore(reducers
+    , initialState
+    , applyMiddleware(logger));
+
+console.log(storeFactory.getState());
 
 export default storeFactory;
