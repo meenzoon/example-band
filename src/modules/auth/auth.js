@@ -1,3 +1,5 @@
+import { createAction, handleActions } from 'redux-actions'
+
 // 액션 타입 정의
 const SIGN_IN_EMAIL_REQUEST = 'auth/SIGN_IN_EMAIL_REQUEST';
 const SIGN_IN_EMAIL_SUCCESS = 'auth/SIGN_IN_EMAIL_SUCCESS';
@@ -15,40 +17,39 @@ const SIGN_OUT_REQUEST = 'auth/SIGN_OUT_REQUEST';
 const SIGN_OUT_SUCCESS = 'auth/SIGN_OUT_REQUEST';
 const SIGN_OUT_FAILED = 'auth/SIGN_OUT_FAILED';
 
+const signInEmailRequest = createAction(SIGN_IN_EMAIL_REQUEST);
+const signInEmailSuccess = createAction(SIGN_IN_EMAIL_SUCCESS);
+const signInEmailFailed = createAction(SIGN_IN_EMAIL_FAILED);
+
+const signInGoogleRequest = createAction(SIGN_IN_GOOGLE_REQUEST);
+const signInGoogleSuccess = createAction(SIGN_IN_GOOGLE_SUCCESS);
+const signInGoogleFailed = createAction(SIGN_IN_GOOGLE_FAILED);
+
+const signInFacebookRequest = createAction(SIGN_IN_FACEBOOK_REQUEST);
+const signInFacebookSuccess = createAction(SIGN_IN_FACEBOOK_SUCCESS);
+const signInFacebookFailed = createAction(SIGN_IN_FACEBOOK_FAILED);
+
+const signOutRequest = createAction(SIGN_OUT_REQUEST);
+const signOutSuccess = createAction(SIGN_OUT_SUCCESS);
+const signOutFailed = createAction(SIGN_OUT_FAILED);
+
 //초기 상태
 const initialState = {
     color: 'red',
     number: 0
 };
 
-// auth 리듀서
-export default function authReducer(state = initialState, action) {
-    switch(action.type) {
-        case SIGN_IN_EMAIL_REQUEST:
-            return state;
-        case SIGN_IN_EMAIL_SUCCESS:
-            return state;
-        case SIGN_IN_EMAIL_FAILED:
-            return state;
-        case SIGN_IN_GOOGLE_REQUEST:
-            return state;
-        case SIGN_IN_GOOGLE_SUCCESS:
-            return state;
-        case SIGN_IN_GOOGLE_FAILED:
-            return state;
-        case SIGN_IN_FACEBOOK_REQUEST:
-            return state;
-        case SIGN_IN_FACEBOOK_SUCCESS:
-            return state;
-        case SIGN_IN_FACEBOOK_FAILED:
-            return state;
-        case SIGN_OUT_REQUEST:
-            return state;
-        case SIGN_OUT_SUCCESS:
-            return state;
-        case SIGN_OUT_FAILED:
-            return state;
-        default:
-            return state;
-    }
-}
+export default handleActions({
+    [SIGN_IN_EMAIL_REQUEST]: (state) => state,
+    [SIGN_IN_EMAIL_SUCCESS]: (state) => state,
+    [SIGN_IN_EMAIL_FAILED]: (state) => state,
+    [SIGN_IN_GOOGLE_REQUEST]: (state) => state,
+    [SIGN_IN_GOOGLE_SUCCESS]: (state) => state,
+    [SIGN_IN_GOOGLE_FAILED]: (state) => state,
+    [SIGN_IN_FACEBOOK_REQUEST]: (state) => state,
+    [SIGN_IN_FACEBOOK_SUCCESS]: (state) => state,
+    [SIGN_IN_FACEBOOK_FAILED]: (state) => state,
+    [SIGN_OUT_REQUEST]: (state) => state,
+    [SIGN_OUT_SUCCESS]: (state) => state,
+    [SIGN_OUT_FAILED]: (state) => state
+}, initialState);

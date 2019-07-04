@@ -1,4 +1,5 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
+import thunk from 'redux-thunk'
 import reducers from './modules'
 
 let console = window.console;
@@ -12,9 +13,16 @@ const logger = store => next => action => {
     return result;
 }
 
+const composeMiddleWare = window.__REDUX_DEVTOOLS_EXTENSION__ ?
+    compose(
+        applyMiddleware(thunk, logger),
+        window.__REDUX_DEVTOOLS_EXTENSION__()
+    ) :
+    applyMiddleware(thunk, logger);
+
 const storeFactory = createStore(reducers
     , initialState
-    , applyMiddleware(logger));
+    , composeMiddleWare);
 
 console.log(storeFactory.getState());
 

@@ -4,7 +4,7 @@ import SignInEmail from '../../components/user/SignInEmail'
 import SignInGoogle from '../../components/user/SignInGoogle'
 import SignInFacebook from '../../components/user/SignInFacebook'
 
-export class signIn extends Component {
+export class SignIn extends Component {
 
     constructor(props) {
         super(props)
@@ -24,4 +24,4 @@ export class signIn extends Component {
     }
 }
 
-export default signIn
+export default SignIn

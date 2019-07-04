@@ -8,7 +8,7 @@ import App from './App'
 import storeFactory from './store'
 import * as serviceWorker from './serviceWorker'
 
-const firebaseConfig = {
+firebase.initializeApp({
     apiKey: "AIzaSyDTLez_xPoME3KerHp8qoUU-IChy5A4fXI",
     authDomain: "meenzoon-33eec.firebaseapp.com",
     databaseURL: "https://meenzoon-33eec.firebaseio.com",
@@ -16,9 +16,24 @@ const firebaseConfig = {
     storageBucket: "meenzoon-33eec.appspot.com",
     messagingSenderId: "779698622118",
     appId: "1:779698622118:web:f1b64cafffb2292b"
-};
+});
 
-firebase.initializeApp(firebaseConfig);
+firebase.auth().onAuthStateChanged((user) => {
+    if(user){
+        // User is signed in.
+    } else {
+        // No user is signed in.
+    }
+    /*
+    store.dispatch(authActions.updateUser(user));
+    if(user){
+        store.dispatch(push('/'))
+    }else{
+        store.dispatch(push('/auth/login'))
+    }
+    */
+    
+})
 
 ReactDOM.render(
     <Provider store={storeFactory}>

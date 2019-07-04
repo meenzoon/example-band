@@ -3,8 +3,8 @@ import { Router, Route } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 import './App.css';
 import Header from './components/header/Header'
-import signIn from './containers/user/signIn'
-import signUp from './containers/user/signUp'
+import SignIn from './containers/user/SignIn'
+import SignUp from './containers/user/SignUp'
 
 const history = createBrowserHistory();
 
@@ -13,8 +13,8 @@ class App extends Component {
     return (
       <Router history={history}>
         <Header/>
-          <Route path="/auth/login" component={signIn} />
-          <Route path="/auth/register" component={signUp} />
+          <Route path="/auth/login" component={SignIn} />
+          <Route path="/auth/register" component={SignUp} />
         </Router>
     );
   }
