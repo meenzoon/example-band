@@ -33,23 +33,25 @@ const signOutRequest = createAction(SIGN_OUT_REQUEST);
 const signOutSuccess = createAction(SIGN_OUT_SUCCESS);
 const signOutFailed = createAction(SIGN_OUT_FAILED);
 
+
+
 //초기 상태
 const initialState = {
-    color: 'red',
-    number: 0
+    isLoading: false,
+    error: null
 };
 
 export default handleActions({
-    [SIGN_IN_EMAIL_REQUEST]: (state, action) => state,
-    [SIGN_IN_EMAIL_SUCCESS]: (state, action) => state,
-    [SIGN_IN_EMAIL_FAILED]: (state, action) => state,
-    [SIGN_IN_GOOGLE_REQUEST]: (state, action) => state,
-    [SIGN_IN_GOOGLE_SUCCESS]: (state, action) => state,
-    [SIGN_IN_GOOGLE_FAILED]: (state, action) => state,
-    [SIGN_IN_FACEBOOK_REQUEST]: (state, action) => state,
-    [SIGN_IN_FACEBOOK_SUCCESS]: (state, action) => state,
-    [SIGN_IN_FACEBOOK_FAILED]: (state, action) => state,
-    [SIGN_OUT_REQUEST]: (state, action) => state,
-    [SIGN_OUT_SUCCESS]: (state, action) => state,
-    [SIGN_OUT_FAILED]: (state, action) => state
+    [SIGN_IN_EMAIL_REQUEST]: (state) => Object.assign({}, state, {isLoading: true}),
+    [SIGN_IN_EMAIL_SUCCESS]: (state) => Object.assign({}, state, {isLoading: false}),
+    [SIGN_IN_EMAIL_FAILED]: (state, action) => Object.assign({}, state, {isLoading: true, error: action.payload}),
+    [SIGN_IN_GOOGLE_REQUEST]: (state) => Object.assign({}, state, {isLoading: true}),
+    [SIGN_IN_GOOGLE_SUCCESS]: (state) => Object.assign({}, state, {isLoading: true}),
+    [SIGN_IN_GOOGLE_FAILED]: (state, action) => Object.assign({}, state, {isLoading: true, error: action.payload}),
+    [SIGN_IN_FACEBOOK_REQUEST]: (state) => Object.assign({}, state, {isLoading: true}),
+    [SIGN_IN_FACEBOOK_SUCCESS]: (state) => Object.assign({}, state, {isLoading: true}),
+    [SIGN_IN_FACEBOOK_FAILED]: (state, action) => Object.assign({}, state, {isLoading: true, error: action.payload}),
+    [SIGN_OUT_REQUEST]: (state) => Object.assign({}, state, {isLoading: true}),
+    [SIGN_OUT_SUCCESS]: (state) => Object.assign({}, state, {isLoading: true}),
+    [SIGN_OUT_FAILED]: (state, action) => Object.assign({}, state, {isLoading: true, error: action.payload})
 }, initialState);
