@@ -1,17 +1,13 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
+import { createLogger } from 'redux-logger'
 import reducers from './modules'
 
 let console = window.console;
 
 let initialState = {}
 
-const logger = store => next => action => {
-    let result;
-    console.log("123");
-    result = next(action);
-    return result;
-}
+const logger = createLogger();
 
 const composeMiddleWare = window.__REDUX_DEVTOOLS_EXTENSION__ ?
     compose(

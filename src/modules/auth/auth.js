@@ -40,16 +40,16 @@ const initialState = {
 };
 
 export default handleActions({
-    [SIGN_IN_EMAIL_REQUEST]: (state) => state,
-    [SIGN_IN_EMAIL_SUCCESS]: (state) => state,
-    [SIGN_IN_EMAIL_FAILED]: (state) => state,
-    [SIGN_IN_GOOGLE_REQUEST]: (state) => state,
-    [SIGN_IN_GOOGLE_SUCCESS]: (state) => state,
-    [SIGN_IN_GOOGLE_FAILED]: (state) => state,
-    [SIGN_IN_FACEBOOK_REQUEST]: (state) => state,
-    [SIGN_IN_FACEBOOK_SUCCESS]: (state) => state,
-    [SIGN_IN_FACEBOOK_FAILED]: (state) => state,
-    [SIGN_OUT_REQUEST]: (state) => state,
-    [SIGN_OUT_SUCCESS]: (state) => state,
-    [SIGN_OUT_FAILED]: (state) => state
+    [SIGN_IN_EMAIL_REQUEST]: (state, action) => state,
+    [SIGN_IN_EMAIL_SUCCESS]: (state, action) => state,
+    [SIGN_IN_EMAIL_FAILED]: (state, action) => state,
+    [SIGN_IN_GOOGLE_REQUEST]: (state, action) => state,
+    [SIGN_IN_GOOGLE_SUCCESS]: (state, action) => state,
+    [SIGN_IN_GOOGLE_FAILED]: (state, action) => state,
+    [SIGN_IN_FACEBOOK_REQUEST]: (state, action) => state,
+    [SIGN_IN_FACEBOOK_SUCCESS]: (state, action) => state,
+    [SIGN_IN_FACEBOOK_FAILED]: (state, action) => state,
+    [SIGN_OUT_REQUEST]: (state, action) => state,
+    [SIGN_OUT_SUCCESS]: (state, action) => state,
+    [SIGN_OUT_FAILED]: (state, action) => state
 }, initialState);
